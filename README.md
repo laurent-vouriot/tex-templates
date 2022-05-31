@@ -5,12 +5,12 @@
 
 to build : 
 ```
->$ make FILE=report 
+$ make FILE=report 
 ```
 
 to clean the build directory : 
 
 ```
->& make clean
+$ make clean
 ```
 
