@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}  
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{changepage}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{algorithm}		% |
+\usepackage{algorithmicx}	% |	 Algortihms
+\usepackage{algpseudocode}	% |
+\usepackage{fancyhdr}		% Header/Footer 
+\usepackage{tikz}
+% \usepackage{pgf_pie}		% pie charts 
+\usepackage[backend=bibtex]{biblatex}
+
+%\addbibresource{resource.bib} 
+\bibliography{resource}
+
+% -----------------------------------------------------------------------------
+% Header footer
+% -----------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\lhead{\small subject}
+\chead{\small header}
+\rhead{\small Uppsala Univeristy}
+\lfoot{\small Laurent VOURIOT}
+\rfoot{\small \today}
+
+\title{Report title}
+\begin{document}
+\pagenumbering{Alph}
+
+
+% -----------------------------------------------------------------------------
+% Title page
+% -----------------------------------------------------------------------------
+
+
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+	\center
+
+	\textsc{\LARGE Uppsala university}\\[1.5cm]
+	\textsc{\large Major heading}\\[0.5cm]
+	\textsc{\large Minor heading}\\[0.5cm]
+
+
+	\HRule\\[0.4cm]
+
+	{\huge\bfseries Academic title}\\[0.4cm]
+
+
+	\HRule\\[1.5cm]
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Author}\\
+			Laurent \textsc{Vouriot}
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Supervisor}\\
+			Dr. Caroline \textsc{Becker} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+
+	% OR 
+	%{\large\textit{Author}}\\
+	%Laurent \textsc{VOURIOT} 
+
+	\vfill\vfill\vfill 
+	{\large\today}
+
+	\vfill\vfill
+	\includegraphics[width=5cm]{figs/uulogga.png}\\[1cm]
+
+	\vfill 
+
+	\center
+\end{titlepage}
+
+% -----------------------------------------------------------------------------
+% Document 
+% -----------------------------------------------------------------------------
+
+\pagenumbering{arabic}
+\pagebreak
+\section{Section 1}
+	
+	\begin{paragraph}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit\cite{ARTICLE:1}, sed do eiusmod tempor incididunt ut\cite{BOOK:1} \cite{BOOK:2} labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{WEBSITE:1}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		\\[3cm]
+	\end{paragraph}
+
+	\begin{tikzpicture}
+		\node[shape=circle, draw=black] (A) at (0,0) {A};
+		\node[shape=circle, draw=black] (B) at (5,3) {B};
+		\node[shape=circle, draw=black] (C) at (11,10) {C};
+
+		\path [->](A) edge node[left] {$5$} (B);
+		\path [->](B) edge node[left] {$3$} (C);
+		\path [->](C) edge node[left] {$2$} (A);
+	\end{tikzpicture}
+
+
+	\printbibliography
+\end{document}
