@@ -13,4 +13,10 @@ to clean the build directory :
 ```
 $ make clean
 ```
+-----------------------------
+
+### Big Report
+
+![big report illustration](images/big_report_illustration.png)
+
 
