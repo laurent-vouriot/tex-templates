@@ -141,13 +141,26 @@
 				\path [->](B) edge node[left] {$3$} (C);
 				\path [->](C) edge node[left] {$2$} (A);
 			\end{tikzpicture}
-			\caption{caption}
+			\caption{tikz graph example.}
 			\label{fig:graph}
 		\end{figure} 
 
 \section{Section 2} 
-	\subsection{Text}
-	\lipsum[1-2]
+	\subsection{Tabular}
+	\begin{figure}[H]
+		\begin{tabular}{ | r | r | r | r | }
+			$d$ & $c$ & $e$ & status\\
+			1 & 2 & 3 & sat \\
+			5 & 11 & 1 & sat \\
+			15 & 8 & 7 & sat \\
+			3 & 19 & 4 & sat \\
+			25 & 18 & 15 & unsat \\
+		\end{tabular} \\
+		\caption{Tabular example.}
+		\label{tab:tab1}
+	\end{figure}
+
+	\lipsum[1]
 
 	\subsection{Pictures}
 	\begin{figure}[H]
