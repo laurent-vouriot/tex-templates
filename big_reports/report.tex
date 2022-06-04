@@ -25,8 +25,25 @@
 
 \bibliography{resource}
 
-
+% Useful commands 
 \newcommand{\todo}[1]{{\color{blue}#1}}
+\newcommand{\done}[1]{{\color{red}#1}}
+\newcommand{\filler}[1]{$\Tuple{\dots}$}
+
+% Wrappers 
+\newcommand{\Card}[1]{\left\lvert#1\right\rvert}
+\newcommand{\Ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\Floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\Implies}{\Rightarrow}
+\newcommand{\Intersect}{\cap}
+\newcommand{\Oh}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\Sequence}[1]{\left#1\right}
+\newcommand{\Set}[1]{\left\[#1\right\]}
+\newcommand{\SetComp}[2]{\Set{#1\SuchThat#2}}
+\newcommand{\SuchThat}{\mid}
+\newcommand{\Tuple}[1]{\langle#1\rangle}
+\newcommand{\Union}{\cup}
 
 % -----------------------------------------------------------------------------
 % Header footer
@@ -57,7 +74,6 @@
 	\textsc{\LARGE Uppsala university}\\[1.5cm]
 	\textsc{\large Major heading}\\[0.5cm]
 	\textsc{\large Minor heading}\\[0.5cm]
-
 
 	\HRule\\[0.4cm]
 
@@ -109,7 +125,7 @@
 
 \section{Section 1}
 	\subsection{Text with citations}
-	\todo{TODO thing}
+	\todo{todo this} \filler, \done{done that}. 
 	\paragraph \noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit\cite{ARTICLE:1}, sed do eiusmod tempor incididunt ut\cite{BOOK:1} \cite{BOOK:2} labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{WEBSITE:1}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	\lipsum[1-2]
 
@@ -186,14 +202,13 @@
 			\State{\textbf{Sort} $Set$}
 			\ForAll{edge $(u, v) \in G$}
 				\If {$find(u) \neq find(v)$}
-					\State{$A \cup (u,v)$}
+					\State{$A \Union (u,v)$}
 				\EndIf
-			\EndFor
+			\EndFor\\
 			\Return $A$
 		\end{algorithmic}
 	\end{algorithm}
-
-
+	Complexity is $\Oh{\Card{E}log(\Card{E})}$
 
 \pagebreak 
 
