@@ -2,6 +2,8 @@
 # LateX Makefile
 # 
 
+FILE=report
+
 all: $(FILE).tex
 	pdflatex $(FILE) && bibtex $(FILE)||true && pdflatex $(FILE) && pdflatex $(FILE)
 	firefox $(FILE).pdf & 
