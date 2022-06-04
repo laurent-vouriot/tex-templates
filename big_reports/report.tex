@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper,12pt,hidelinks]{article}
 
 \usepackage[english]{babel}
 
@@ -105,26 +105,98 @@
 
 \tableofcontents
 
+\pagebreak
+
 \section{Section 1}
-	\todo TODO thing
-	\paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit\cite{ARTICLE:1}, sed do eiusmod tempor incididunt ut\cite{BOOK:1} \cite{BOOK:2} labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{WEBSITE:1}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		\\[3cm]
-
-
-	\subsection{sub section 1}
-		\begin{tikzpicture}
-			\node[shape=circle, draw=black] (A) at (0,0) {A};
-			\node[shape=circle, draw=black] (B) at (5,3) {B};
-			\node[shape=circle, draw=black] (C) at (11,10) {C};
-
-			\path [->](A) edge node[left] {$5$} (B);
-			\path [->](B) edge node[left] {$3$} (C);
-			\path [->](C) edge node[left] {$2$} (A);
-		\end{tikzpicture}
-	
-\section{section 2} 
+	\subsection{Text with citations}
+	\todo{TODO thing}
+	\paragraph \noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit\cite{ARTICLE:1}, sed do eiusmod tempor incididunt ut\cite{BOOK:1} \cite{BOOK:2} labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur \cite{WEBSITE:1}. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	\lipsum[1-2]
 
+	\subsection{tikz}
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\node[shape=circle, draw=black] (A) at (0,0) {A};
+				\node[shape=circle, draw=black] (B) at (5,3) {B};
+				\node[shape=circle, draw=black] (C) at (11,10) {C};
 
-	\printbibliography
+				\path [->](A) edge node[left] {$5$} (B);
+				\path [->](B) edge node[left] {$3$} (C);
+				\path [->](C) edge node[left] {$2$} (A);
+			\end{tikzpicture}
+			\caption{caption}
+			\label{fig:graph}
+		\end{figure} 
+
+\section{Section 2} 
+	\subsection{Text}
+	\lipsum[1-2]
+
+	\subsection{Pictures}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=12cm]{figs/mandelbrotset.jpg}
+		\caption{Mandelbrot set}
+		\label{fig:mandelbrotset}
+	\end{figure} 
+
+	\pagebreak
+
+\section{Section 3}
+	\subsection{Equations}
+	\begin{equation}
+		\phi(t)=\frac{1}{\sqrt{2\pi}}
+		\int^t_0 e^{-x^2/2} dx 
+	\end{equation}
+
+	\begin{equation}
+		\prod_{j\geq 0}
+		\left(\sum_{k\geq 0}a_{jk} z^k\right) 
+		= \sum_{k\geq 0} z^n
+		\left( \sum_{{k_0,k_1,\ldots\geq 0}
+		\atop{k_0+k_1+\ldots=n}    }
+		a{_0k_0}a_{1k_1}\ldots  \right) 
+	\end{equation}
+
+	\begin{equation}
+		\pi(n) = \sum_{m=2}^{n}
+		\left\lfloor \left(\sum_{k=1}^{m-1}
+		\lfloor(m/k)/\lceil m/k\rceil 
+		\rfloor \right)^{-1}
+		\right\rfloor
+	\end{equation}
+
+	\begin{equation}
+		\{\underbrace{
+			\overbrace{\mathstrut a,\ldots,a}^{k\ a's},
+			\overbrace{\mathstrut b,\ldots,b}^{l\ b's}}
+			_{k+1\ \mathrm{elements}}                   \}
+	\end{equation}
+
+	\subsection{Algorithm}
+
+	\begin{algorithm}[H]
+		\caption{Kruskal(G)}
+		\begin{algorithmic}[1]
+			\State{$A \gets \emptyset $}
+			\ForAll{verticies $v\in G$}
+				\State{$Set[] \gets v$}
+			\EndFor
+			\State{\textbf{Sort} $Set$}
+			\ForAll{edge $(u, v) \in G$}
+				\If {$find(u) \neq find(v)$}
+					\State{$A \cup (u,v)$}
+				\EndIf
+			\EndFor
+			\Return $A$
+		\end{algorithmic}
+	\end{algorithm}
+
+
+
+\pagebreak 
+
+\printbibliography
+
 \end{document}
